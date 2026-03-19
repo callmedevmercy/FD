@@ -1,4 +1,13 @@
-AccessTravel 🌍Empowering Accessible Travel for Everyone.AccessTravel is a web-based platform designed to bridge the information gap for travelers with disabilities. It provides a curated database of accessible hotels, attractions, and restaurants, allowing users to filter locations based on their specific physical or sensory needs.🚀 Live DemoFrontend Deployment: [Insert your Netlify URL here]Backend API: [Insert your Render URL here]✨ FeaturesCustom Accessibility Profiles: Users can define their specific needs (Wheelchair, Braille, Hearing Assistance) which are saved to localStorage for a persistent, tailored experience.Dynamic Search & Filter: A real-time exploration page that fetches data from a cloud-hosted MongoDB database and filters it against the user's saved profile.Detailed View: Specific pages for each location showing high-quality images, descriptions, and a checklist of verified accessibility features.Responsive UI: A mobile-first design featuring a custom hamburger navigation menu and optimized layouts for all screen sizes.🛠️ Tech StackLayerTechnologyFrontendHTML5, Tailwind CSSLogicJavaScript (ES6+), AxiosStorageBrowser LocalStorage (Client-side)BackendNode.js, Express (Hosted on Render)DatabaseMongoDB📂 Project StructurePlaintextAccessTravel/
+AccessTravel 🌍Empowering Accessible Travel for Everyone.AccessTravel is a web-based platform designed to bridge the information gap for travelers with disabilities.
+It provides a curated database of accessible hotels, attractions, and restaurants, allowing users to filter locations based on their specific physical or sensory needs.
+🚀 Live DemoFrontend Deployment: [https://fd-phi-wheat.vercel.app/]
+FeaturesCustom Accessibility Profiles: Users can define their specific needs (Wheelchair, Braille, Hearing Assistance) which are saved to localStorage for a persistent, tailored experience.Dynamic Search & 
+Filter: A real-time exploration page that fetches data from a cloud-hosted MongoDB database and filters it against the user's saved profile.
+
+Detailed View: Specific pages for each location showing high-quality images, descriptions, and a checklist of verified accessibility features.Responsive UI: A mobile-first design featuring a custom hamburger navigation menu and optimized layouts for all screen sizes.
+
+🛠️ Tech StackLayerTechnologyFrontendHTML5, Tailwind CSSLogicJavaScript (ES6+), AxiosStorageBrowser LocalStorage (Client-side)BackendNode.js, Express (Hosted on Render)DatabaseMongoDB📂 
+Project Structure
 ```text
 AccessTravel/
 ├── asset/
