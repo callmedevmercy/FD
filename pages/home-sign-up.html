@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome - AccessTravel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primaryBlue: "#1E40AF",
+            secondaryTeal: "#0EA5A4",
+            textPrimary: "#111827",
+            textSecondary: "#6B7280",
+            borderColor: "#E5E7EB",
+            glassTeal: "#E0F7F6",
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-white text-textPrimary font-sans">
+
+  <div class="pt-6 pb-2 px-4">
+      <header class="max-w-[1200px] mx-auto bg-glassTeal rounded-full px-8 py-3 flex items-center justify-between shadow-sm">
+        
+        <div class="w-40"> 
+          <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768586288/Frame_2147227578_1_gzuwfw.png" alt="AccessTravel logo" class="w-full h-full object-contain" />
+        </div>
+
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
+          <a href="#" class="text-secondaryTeal font-semibold">Home</a>
+          <a href="explore.html" class="hover:text-secondaryTeal transition">Explore</a>
+          <a href="#" class="hover:text-secondaryTeal transition">How it works</a>
+        </nav>
+
+        <div class="flex items-center gap-4">
+          <button class="w-9 h-9 flex items-center justify-center hover:opacity-80 transition">
+             <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768560713/tdesign_notification-filled_otbsqs.png" alt="Notifications" class="w-6 h-6"> 
+          </button>
+          
+         <a href="profile.html" class="w-9 h-9 flex items-center justify-center hover:opacity-80 transition rounded-full overflow-hidden border border-gray-200">
+    <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768560723/iconamoon_profile-fill_epysp4.png" alt="Profile" class="w-full h-full object-cover">
+</a>
+        </div>
+
+      </header>
+  </div>
+
+  <main class="max-w-7xl mx-auto px-6 py-10">
+    <section class="text-center mb-10 mt-4">
+      <h1 class="text-[32px] font-bold mb-2">
+        <span id="welcomeMessage">Welcome to AccessTravel</span>,
+        <span id="username">Traveler</span>
+      </h1>
+      <p id="welcomeSubtext" class="text-textSecondary text-base">Start planning your accessible journey</p>
+    </section>
+
+    <section class="mb-12">
+      <div class="flex items-center justify-center gap-4 mb-4">
+        <div class="relative w-full max-w-[520px]">
+          <div class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 pointer-events-none">
+            <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768587269/mingcute_search-fill_inzsne.png" alt="Search" class="w-full h-full object-contain" />
+          </div>
+          <input type="text" placeholder="Search by city, hotel, restaurant or attraction" class="w-full pl-12 pr-4 py-3 border border-borderColor rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-primaryBlue shadow-sm" />
+        </div>
+        <button class="px-8 py-3 rounded-full bg-primaryBlue text-white text-sm font-medium hover:bg-blue-800 transition shadow-md">Search</button>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-3 text-sm">
+        <span class="text-textSecondary mr-2">Your accessibility needs:</span>
+        <div class="px-4 py-2 rounded-full bg-white border border-borderColor text-textPrimary flex items-center gap-2">
+          <div class="w-4 h-4"><img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768587269/Frame_2147227494_szbbb0.png" alt="Mobility" class="w-full h-full object-contain" /></div>
+          Mobility
+        </div>
+        <div class="px-4 py-2 rounded-full bg-white border border-borderColor text-textPrimary flex items-center gap-2">
+          <div class="w-4 h-4"><img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768587269/Frame_2147227494_1_uxjkka.png" alt="Visual" class="w-full h-full object-contain" /></div>
+          Visual
+        </div>
+        <div class="px-4 py-2 rounded-full bg-white border border-borderColor text-textPrimary flex items-center gap-2">
+          <div class="w-4 h-4"><img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768587270/ic_outline-hearing_st39yf.png" alt="Auditory" class="w-full h-full object-contain" /></div>
+          Auditory
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-14">
+      <h2 class="text-[24px] font-semibold mb-1">Recommended for You</h2>
+      <p class="text-textSecondary text-sm mb-6">Continue planning your accessible journey</p>
+      
+      <div class="flex gap-6 overflow-x-auto pb-4 no-scrollbar">
+        <div class="min-w-[280px] w-1/4 border border-borderColor rounded-xl p-4 hover:shadow-lg transition">
+          <div class="h-32 mb-3 bg-gray-100 rounded-lg overflow-hidden">
+             <img src="https://res.cloudinary.com/dpjnyojeo/image/upload/v1768091692/unsplash_M7GddPqJowg_fenm9a.png" class="w-full h-full object-cover" alt="">
+          </div>
+          <h3 class="font-semibold text-base mb-1">The Grand Harbor Hotel</h3>
+          <p class="text-textSecondary text-sm mb-3">Lagos, Nigeria</p>
+          <div class="text-xs text-textSecondary space-y-1 mb-4">
+            <p>✓ Wheelchair Accessible</p>
+            <p>✓ Visual Assistance</p>
+          </div>
+          <a href="hotel-details.html?id=grand-harbor" class="block text-center w-full py-2 rounded-lg bg-secondaryTeal text-white text-sm hover:opacity-90 transition">View details</a>
+        </div>
+        <div class="min-w-[280px] w-1/4 border border-borderColor rounded-xl p-4 hover:shadow-lg transition">
+          <div class="h-32 mb-3 bg-gray-100 rounded-lg overflow-hidden">
+             <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768588097/unsplash_M7GddPqJowg_1_onvovf.png" class="w-full h-full object-cover" alt="">
+          </div>
+          <h3 class="font-semibold text-base mb-1">Bella Vita Restaurant</h3>
+          <p class="text-textSecondary text-sm mb-3">Lagos, Nigeria</p>
+          <div class="text-xs text-textSecondary space-y-1 mb-4">
+            <p>✓ Wheelchair Accessible</p>
+            <p>✓ Visual Assistance</p>
+          </div>
+          <a href="hotel-details.html?id=bella-vita" class="block text-center w-full py-2 rounded-lg bg-secondaryTeal text-white text-sm hover:opacity-90 transition">View details</a>
+        </div>
+        <div class="min-w-[280px] w-1/4 border border-borderColor rounded-xl p-4 hover:shadow-lg transition">
+          <div class="h-32 mb-3 bg-gray-100 rounded-lg overflow-hidden">
+             <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768588097/unsplash_M7GddPqJowg_2_lvr1oz.png" class="w-full h-full object-cover" alt="">
+          </div>
+          <h3 class="font-semibold text-base mb-1">Rose Gardenia</h3>
+          <p class="text-textSecondary text-sm mb-3">Lagos, Nigeria</p>
+          <div class="text-xs text-textSecondary space-y-1 mb-4">
+            <p>✓ Wheelchair Accessible</p>
+            <p>✓ Auditory Support</p>
+          </div>
+          <a href="hotel-details.html?id=rose-gardenia" class="block text-center w-full py-2 rounded-lg bg-secondaryTeal text-white text-sm hover:opacity-90 transition">View details</a>
+        </div>
+         <div class="min-w-[280px] w-1/4 border border-borderColor rounded-xl p-4 hover:shadow-lg transition">
+          <div class="h-32 mb-3 bg-gray-100 rounded-lg overflow-hidden">
+             <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768588097/unsplash_M7GddPqJowg_3_r4hiy0.png" class="w-full h-full object-cover" alt="">
+          </div>
+          <h3 class="font-semibold text-base mb-1">Giwa Waterpark</h3>
+          <p class="text-textSecondary text-sm mb-3">Lagos, Nigeria</p>
+          <div class="text-xs text-textSecondary space-y-1 mb-4">
+            <p>✓ Wheelchair Accessible</p>
+            <p>✓ Family Friendly</p>
+          </div>
+          <a href="hotel-details.html?id=giwa-waterpark" class="block text-center w-full py-2 rounded-lg bg-secondaryTeal text-white text-sm hover:opacity-90 transition">View details</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-[24px] font-semibold mb-1">Quick Actions</h2>
+      <p class="text-textSecondary text-sm mb-6">What would you like to do today?</p>
+      <div class="flex gap-6 overflow-x-auto pb-4">
+        
+        <a href="explore.html" class="min-w-[200px] block w-1/3 border border-borderColor rounded-xl p-6 text-center hover:-translate-y-1 hover:shadow-md transition bg-white group">
+          <div class="w-10 h-10 rounded mx-auto mb-3"><img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768588615/streamline-sharp-color_map-search_jy1z12.png" alt=""></div>
+          <h3 class="font-semibold mb-1 group-hover:text-primaryBlue transition">Explore places</h3>
+          <p class="text-textSecondary text-sm">Discover new accessible destinations</p>
+        </a>
+
+        <a href="accessability.html" class="min-w-[200px] block w-1/3 border border-borderColor rounded-xl p-6 text-center hover:-translate-y-1 hover:shadow-md transition bg-white group">
+          <div class="w-10 h-10 rounded mx-auto mb-3"><img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768588685/iconamoon_profile-circle-fill_hcavfy.png" alt=""></div>
+          <h3 class="font-semibold mb-1 group-hover:text-secondaryTeal transition">Edit accessibility profile</h3>
+          <p class="text-textSecondary text-sm">Update your needs and preferences</p>
+        </a>
+
+        <a href="#" class="min-w-[200px] block w-1/3 border border-borderColor rounded-xl p-6 text-center hover:-translate-y-1 hover:shadow-md transition bg-white group">
+          <div class="w-10 h-10 rounded mx-auto mb-3"><img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768588685/mdi_message_zp5bai.png" alt=""></div>
+          <h3 class="font-semibold mb-1 group-hover:text-orange-500 transition">Contribute a review</h3>
+          <p class="text-textSecondary text-sm">Share your accessibility experience</p>
+        </a>
+
+      </div>
+    </section>
+  </main>
+  
+  <footer class="bg-black text-white py-16 mt-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-5 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-wheelchair text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold"><span class="text-blue-500">Access</span><span class="text-teal-400">Travel</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Making travel accessible, predictable and safe for people with disabilities worldwide. Built with real experiences. Verified by the community.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="font-bold mb-4 text-lg">Explore</h3>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Search Destinations</a></li>
+                        <li><a href="#" class="hover:text-white transition">Trip Planner</a></li>
+                        <li><a href="#" class="hover:text-white transition">Transportation</a></li>
+                        <li><a href="#" class="hover:text-white transition">Attractions & Experiences</a></li>
+                        <li><a href="#" class="hover:text-white transition">Accessible Hotels</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold mb-4 text-lg">Resources</h3>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Accessibility Guides</a></li>
+                        <li><a href="#" class="hover:text-white transition">Travel Tips</a></li>
+                        <li><a href="#" class="hover:text-white transition">Disability Etiquette Guide</a></li>
+                        <li><a href="#" class="hover:text-white transition">Accessibility Standards</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold mb-4 text-lg">Company</h3>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition">Partners</a></li>
+                        <li><a href="#" class="hover:text-white transition">Accessibility Statement</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold mb-4 text-lg">Legal</h3>
+                    <ul class="space-y-3 text-gray-400 text-sm mb-6">
+                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+                    </ul>
+                    <div class="flex space-x-5">
+                        <a href="#" class="text-blue-400 hover:text-blue-300 text-xl transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-pink-500 hover:text-pink-400 text-xl transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-blue-500 hover:text-blue-400 text-xl transition"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-500 text-sm flex items-center justify-center">
+                    <i class="far fa-copyright mr-2"></i>
+                    2025 AccessTravel. All rights reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+
+  <script src="../asset/js/components.js"></script>
+  <script src="../asset/js/main.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script type="module">
+    // 1. Import your new Repository
+    import { AuthRepositoryImpl } from '../asset/js/data/repositories/AuthRepositoryImpl.js';
+
+    // 2. Initialize it
+    const authRepo = new AuthRepositoryImpl();
+
+    // 3. Handle the form submit
+    const signUpForm = document.getElementById('signup-form'); // Check your HTML for the correct ID!
+    const errorBox = document.getElementById('error-message'); // Make sure you have this div
+
+    if (signUpForm) {
+        signUpForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Get values from inputs (Check IDs match your HTML)
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+    // 1. Look for the name in every possible storage key we used
+        const rawName = localStorage.getItem('accessTravelUser') || 
+                        localStorage.getItem('userName');
+        
+        // 2. If we found a name, capitalize it (looks nicer)
+        let displayName = "Traveler";
+        if (rawName) {
+            displayName = rawName.charAt(0).toUpperCase() + rawName.slice(1);
+        }
+
+        // 3. Find the element where the name goes
+        // Make sure your HTML has <span id="user-name-display">Traveler</span>
+        const nameElement = document.getElementById('user-name-display');
+        
+        // 4. Update the text
+        if (nameElement) {
+            nameElement.innerText = displayName;
+        } else {
+            console.warn("Could not find element with id='user-name-display'");
+        }
+
+        
+            // Optional: Check if password match confirmed password
+            // const confirmPassword = document.getElementById('confirm-password').value;
+            // if (password !== confirmPassword) { alert("Passwords don't match"); return; }
+       
+            try {
+                if(errorBox) errorBox.innerText = "Creating account...";
+                
+                // 4. Call your Register function
+                const success = await authRepo.register(name, email, password);
+
+                if (success) {
+                    alert("Account created successfully!");
+                    // Redirect to login page so they can sign in with new account
+                    window.location.href = 'sign-in.html';
+                }
+            } catch (error) {
+                console.error(error);
+                // Extract error message from backend if available
+                const msg = error.response?.data?.message || error.message;
+                if(errorBox) errorBox.innerText = msg;
+                alert("Registration Failed: " + msg);
+            }
+        });
+    }
+</script>
+</body>
+</html>

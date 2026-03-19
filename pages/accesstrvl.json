@@ -1,0 +1,223 @@
+{
+  "info": {
+    "name": "AccessTravel MVP API",
+    "description": "Postman collection for AccessTravel backend MVP (Auth, Profiles, Places, Reviews, Trips, Admin)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:5000/api"
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "url": "{{base_url}}/auth/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"Password123!\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "url": "{{base_url}}/auth/login",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"john@example.com\",\n  \"password\": \"Password123!\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get Me",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "url": "{{base_url}}/auth/me"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Accessibility Profile",
+      "item": [
+        {
+          "name": "Create Profile",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "url": "{{base_url}}/profile/create",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"mobility\": { \"wheelchair\": true, \"rollInShower\": true },\n  \"visual\": { \"screenReader\": true },\n  \"hearing\": { \"captions\": true },\n  \"cognitive\": { \"simpleLanguage\": true },\n  \"serviceAnimal\": true,\n  \"sensoryNeeds\": { \"lowNoise\": true }\n}"
+            }
+          }
+        },
+        {
+          "name": "Update Profile",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "url": "{{base_url}}/profile/update",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"mobility\": { \"wheelchair\": false }\n}"
+            }
+          }
+        },
+        {
+          "name": "Get Profile",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "url": "{{base_url}}/profile/get"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Places",
+      "item": [
+        {
+          "name": "Create Place",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "url": "{{base_url}}/places/create",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Accessible Grand Hotel\",\n  \"category\": \"hotel\",\n  \"location\": { \"city\": \"Lagos\", \"country\": \"Nigeria\" },\n  \"accessibilityFeatures\": [\"wheelchair_access\", \"roll_in_shower\"],\n  \"photos\": [],\n  \"verificationStatus\": \"pending\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get Place By ID",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/places/:id"
+          }
+        },
+        {
+          "name": "Search Places",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/places/search?wheelchair=true&serviceAnimal=true"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Reviews",
+      "item": [
+        {
+          "name": "Add Review",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "url": "{{base_url}}/reviews/add",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"placeId\": \"PLACE_ID_HERE\",\n  \"ratings\": { \"mobility\": 5, \"visual\": 4 },\n  \"comments\": \"Wheelchair access was excellent\",\n  \"visitDate\": \"2025-12-20\",\n  \"photos\": []\n}"
+            }
+          }
+        },
+        {
+          "name": "Get Reviews By Place",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/reviews/place/:id"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Trips",
+      "item": [
+        {
+          "name": "Create Trip",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "url": "{{base_url}}/trips/create",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"destination\": \"Lagos\",\n  \"startDate\": \"2026-02-01\",\n  \"endDate\": \"2026-02-07\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get Trip",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "url": "{{base_url}}/trips/:id"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin",
+      "item": [
+        {
+          "name": "Get Flagged Reviews",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "url": "{{base_url}}/admin/reviews"
+          }
+        },
+        {
+          "name": "Get Places For Moderation",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "url": "{{base_url}}/admin/places"
+          }
+        }
+      ]
+    }
+  ]
+}

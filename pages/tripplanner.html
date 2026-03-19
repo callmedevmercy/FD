@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Trip Planner</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primaryBlue: '#1E40AF',
+            secondaryTeal: '#0EA5A4',
+            textPrimary: '#111827',
+            textSecondary: '#6B7280',
+            borderColor: '#E5E7EB',
+            warningYellow: '#F59E0B',
+          },
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="font-inter text-textPrimary bg-white">
+
+  <!-- ========================================================= -->
+  <!-- NAVBAR -->
+  <!-- Static, pill-shaped, centered -->
+  <!-- ========================================================= -->
+  <div class="mt-6 flex justify-center">
+   <!-- ===================== NAVBAR ===================== -->
+<nav class="w-full bg-white border-b border-[#E5E7EB]">
+  <!-- 
+    This container controls the navbar width.
+    max-w-7xl keeps it from stretching on large screens.
+    mx-auto centers it horizontally.
+  -->
+  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<!-- ===================== NAVBAR ===================== -->
+<nav class="w-full mt-6">
+  <div
+    class="max-w-6xl mx-auto
+           h-16 px-8
+           flex items-center justify-between
+           rounded-full
+           bg-[#CFEFEF]"
+  >
+
+    <!-- ===== Left: Logo ===== -->
+    <a href="/pages/index.html" class="flex items-center gap-2">
+      <img
+        src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768587269/Frame_2147227578_1_at8af6.png"
+        alt="AccessTravel icon"
+        class="h-8 w-auto"
+      />
+    </a>
+
+    <!-- ===== Center: Nav Links ===== -->
+    <ul class="hidden md:flex items-center gap-10 text-[15px] text-[#111827]">
+      <li>
+        <a href="index.html" class="hover:opacity-70 transition">
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="ecplore.html" class="hover:opacity-70 transition">
+          Explore
+        </a>
+      </li>
+      <li>
+        <a href="#" class="hover:opacity-70 transition">
+          How it works
+        </a>
+      </li>
+    </ul>
+
+    <!-- ===== Right: Icons ===== -->
+    <div class="flex items-center gap-4">
+      <button
+        class="p-2 rounded-full
+               hover:bg-white/40
+               active:scale-95
+               transition"
+      >
+        <img
+          src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768560713/tdesign_notification-filled_otbsqs.png"
+          alt="Notifications"
+          class="h-5 w-5"
+        />
+      </button>
+
+   <a href="profile.html" class="w-9 h-9 flex items-center justify-center hover:opacity-80 transition rounded-full overflow-hidden border border-gray-200">
+    <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768560723/iconamoon_profile-fill_epysp4.png" alt="Profile" class="w-full h-full object-cover">
+</a>
+    </div>
+
+  </div>
+</nav>
+<!-- =================== END NAVBAR =================== -->
+
+
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- MAIN CONTENT -->
+  <!-- ========================================================= -->
+  <main class="max-w-[1100px] mx-auto px-6 py-10">
+
+    <!-- Heading -->
+    <section class="text-center mb-10">
+      <h1 class="text-[32px] font-bold mb-2">Trip Planner</h1>
+      <p class="text-textSecondary text-[16px]">
+        Plan your journey with accessibility in mind
+      </p>
+    </section>
+
+    <!-- Two-column layout -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+      <!-- LEFT -->
+      <div class="lg:col-span-8 space-y-6">
+
+        <!-- Trip Card -->
+        <div class="bg-[#F9FAFB] border border-borderColor rounded-lg p-6">
+
+          <div class="flex justify-between items-center mb-4">
+            <div>
+              <h2 class="text-[24px] font-semibold">The Grand Harbor Hotel</h2>
+              <p class="text-textSecondary text-[14px]">Lagos, Nigeria</p>
+            </div>
+            <a href="explore.html" class="text-primaryBlue text-[14px]">Edit trip</a>
+          </div>
+
+          <!-- Inputs -->
+          <div class="mb-4">
+            <label class="block text-[14px] text-textSecondary mb-1">Trip name</label>
+            <input type="text"
+              class="w-full border border-borderColor rounded-md px-3 py-2 focus:border-secondaryTeal focus:outline-none" />
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[14px] text-textSecondary mb-1">Start Date</label>
+              <input type="date"
+                class="w-full border border-borderColor rounded-md px-3 py-2 focus:border-secondaryTeal focus:outline-none" />
+            </div>
+            <div>
+              <label class="block text-[14px] text-textSecondary mb-1">End Date</label>
+              <input type="date"
+                class="w-full border border-borderColor rounded-md px-3 py-2 focus:border-secondaryTeal focus:outline-none" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Accessibility Needs -->
+        <div class="border border-borderColor rounded-lg p-6">
+          <h2 class="text-[24px] font-semibold mb-4">Accessibility Needs</h2>
+
+          <div class="space-y-4">
+
+            <!-- Item -->
+            <div class="flex gap-4">
+              <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768782454/ion_checkbox_oeyequ.png" alt="" class="w-6 h-6" />
+              <div>
+                <p class="font-medium">Mobility Aids</p>
+                <div class="flex items-center gap-2 text-[14px] text-textSecondary">
+                  <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768685420/fluent-emoji-high-contrast_check-mark_1_xv9ofr.png" alt="" class="w-4 h-4" />
+                  Manual Wheelchair
+                </div>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768782454/ion_checkbox_oeyequ.png" alt="" class="w-6 h-6" />
+              <div>
+                <p class="font-medium">Hearing Support Needs</p>
+                <div class="flex items-center gap-2 text-[14px] text-textSecondary">
+                  <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768685420/fluent-emoji-high-contrast_check-mark_1_xv9ofr.png" alt="" class="w-4 h-4" />
+                  Cochlear Implants
+                </div>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768782454/ion_checkbox_oeyequ.png" alt="" class="w-6 h-6" />
+              <div>
+                <p class="font-medium">Visual Impairments</p>
+                <div class="flex items-center gap-2 text-[14px] text-textSecondary">
+                  <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768685420/fluent-emoji-high-contrast_check-mark_1_xv9ofr.png" alt="" class="w-4 h-4" />
+                  Low vision
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <a href="accessability.html" class="flex items-center gap-2 mt-6 text-primaryBlue text-[14px]">
+            <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768782454/gg_add_finxb8.png" alt="" class="w-4 h-4" />
+            Edit accessibility profile
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="lg:col-span-4 space-y-6">
+
+        <!-- Accessibility Check -->
+        <div class="border border-borderColor rounded-lg p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768782453/cbi_adguard_ea4wgq.png" alt="" class="w-5 h-5" />
+            <h3 class="font-semibold">Accessibility Check</h3>
+          </div>
+
+          <p class="text-[14px] text-textSecondary mb-2">Features</p>
+          <ul class="space-y-2 text-[14px]">
+            <li class="flex items-center gap-2">
+              <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768843612/material-symbols_check_1_affgiu.png" class="w-4 h-4" /> Wheelchair accessible
+            </li>
+            <li class="flex items-center gap-2">
+              <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768843612/material-symbols_check_1_affgiu.png" class="w-4 h-4" /> Roll-in shower
+            </li>
+            <li class="flex items-center gap-2">
+              <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768843612/material-symbols_check_1_affgiu.png" class="w-4 h-4" /> Step-free entrance
+            </li>
+          </ul>
+
+          <p class="text-[14px] text-textSecondary mt-4 mb-2">Warnings</p>
+          <ul class="space-y-2 text-[14px] text-black">
+            <li class="flex items-center gap-2"><img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768782453/tabler_disabled-off_prhaci.png" class="w-4 h-4" /> No accessible parking</li>
+            <li class="flex items-center gap-2"><img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768782453/Frame_2147227611_kf5rsx.png" class="w-4 h-4" /> Bright lighting</li>
+            <li class="flex items-center gap-2"><img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768782453/Frame_2147227611_kf5rsx.png" class="w-4 h-4" /> High noise levels</li>
+          </ul>
+
+          <a href="explore.html" class="text-primaryBlue text-[14px] mt-4 inline-block">
+            See alternative accessible places nearby
+          </a>
+        </div>
+
+        <!-- Preferences -->
+        <div class="border border-borderColor rounded-lg p-5">
+          <div class="flex items-center gap-2 mb-4">
+            <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768782454/carbon_group-access_jdgani.png" alt="" class="w-5 h-5" />
+            <h3 class="font-semibold">Accessibility Preferences</h3>
+          </div>
+
+          <ul class="space-y-3 text-[14px]">
+            <li class="flex gap-2"><img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768782454/ri_wheelchair-line_mtcdxr.png" class="w-4 h-4" /> Mobility – Wheelchair accessible places</li>
+            <li class="flex gap-2"><img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768782453/icon-park-outline_eyes_ujjjsr.png" class="w-4 h-4" /> Vision – Visually accessible places</li>
+            <li class="flex gap-2"><img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768844065/Frame_2147227623_en6amp.png" class="w-4 h-4" /> Hearing – Hearing friendly places</li>
+          </ul>
+        </div>
+
+        <a href="explore.html" class="flex items-center gap-2 text-primaryBlue text-[14px]">
+          <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768782454/gg_add_finxb8.png" class="w-4 h-4" />
+          Add another trip
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Confirm -->
+    <div class="flex justify-center mt-12">
+      <button class="bg-primaryBlue text-white px-12 py-3 rounded-md">
+        Confirm
+      </button>
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="index.html" class="text-primaryBlue text-[14px]">Back to Home</a>
+    </div>
+  </main>
+
+  <!-- ========================================================= -->
+  <!-- FOOTER -->
+  <!-- ========================================================= -->
+  <!-- ===================== FOOTER ===================== -->
+<footer class="w-full bg-[#111827] text-white mt-24">
+
+  <!-- Main footer content container -->
+  <div class="max-w-7xl mx-auto px-6 py-16">
+
+    <!-- 
+      Grid layout:
+      - 1 column on mobile
+      - 5 columns on desktop
+    -->
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-12">
+
+      <!-- ===== Brand Column ===== -->
+      <div class="md:col-span-2">
+        <a href="#" class="inline-block mb-6">
+          <img 
+            src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768587269/Frame_2147227578_1_at8af6.png"
+            alt="AccessTravel Logo"
+            class="h-8 w-auto"
+          >
+        </a>
+
+        <p class="text-[#9CA3AF] text-[14px] leading-relaxed max-w-sm">
+          Making travel accessible, predictable and safe for people with
+          disabilities worldwide. Built with real experiences.
+          Verified by the community.
+        </p>
+      </div>
+
+      <!-- ===== Explore Column ===== -->
+      <div class="space-y-3">
+        <h4 class="font-semibold text-[16px]">
+          <a href="/pages/index.html#explore">Explore</a>
+        </h4>
+        <a href="#" class="block text-[#9CA3AF] hover:text-white">Search Destinations</a>
+        <a href="#" class="block text-[#9CA3AF] hover:text-white">Trip Planner</a>
+        <a href="#" class="block text-[#9CA3AF] hover:text-white">Transportation</a>
+        <a href="#" class="block text-[#9CA3AF] hover:text-white">Attractions & Experiences</a>
+        <a href="#" class="block text-[#9CA3AF] hover:text-white">Accessible Hotels</a>
+      </div>
+
+      <!-- ===== Resources Column ===== -->
+      <div class="space-y-3">
+        <h4 class="font-semibold text-[16px]">
+          <a href="/pages/index.html#resources">Resources</a>
+        </h4>
+        <a href="#" class="block text-[#9CA3AF] hover:text-white">Accessibility Guides</a>
+        <a href="#" class="block text-[#9CA3AF] hover:text-white">Travel Tips</a>
+        <a href="#" class="block text-[#9CA3AF] hover:text-white">Disability Etiquette Guide</a>
+        <a href="#" class="block text-[#9CA3AF] hover:text-white">Accessibility Standards</a>
+      </div>
+
+      <!-- ===== Legal / Social Column ===== -->
+      <div class="space-y-4">
+        <h4 class="font-semibold text-[16px]">Legal</h4>
+        <a href="#" class="block text-[#9CA3AF] hover:text-white">Privacy Policy</a>
+        <a href="#" class="block text-[#9CA3AF] hover:text-white">Terms of Service</a>
+
+        <!-- Social Icons -->
+        <div class="flex gap-4 pt-4">
+          <a href="#">
+            <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768850476/mdi_twitter_1_uifszh.png" alt="Twitter" class="h-5 w-5">
+          </a>
+          <a href="#">
+            <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768850476/skill-icons_instagram_arow6n.png" alt="Instagram" class="h-5 w-5">
+          </a>
+          <a href="#">
+            <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768850476/icon-park_mail_1_nafmto.png" alt="Email" class="h-5 w-5">
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===== Copyright ===== -->
+    <div class="border-t border-[#1F2937] mt-12 pt-6 text-center text-[12px] text-[#9CA3AF]">
+      © 2025 AccessTravel. All rights reserved.
+    </div>
+
+  </div>
+</footer>
+<!-- =================== END FOOTER =================== -->
+
+<div id="confirm-modal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden p-4">
+  <div class="bg-white rounded-2xl p-8 max-w-sm w-full text-center shadow-2xl">
+    <div class="w-16 h-16 bg-secondaryTeal rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
+      <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768685420/fluent-emoji-high-contrast_check-mark_1_xv9ofr.png" alt="Success" class="w-8 h-8 brightness-0 invert" />
+    </div>
+
+    <h3 class="text-2xl font-bold text-textPrimary mb-2">Trip Confirmed!</h3>
+    <p class="text-textSecondary mb-6 leading-relaxed">
+      Your trip to The Grand Harbor Hotel has been successfully planned and saved.
+    </p>
+
+    <button id="modal-home-btn" class="w-full bg-primaryBlue hover:bg-blue-800 text-white font-bold py-3 rounded-xl transition shadow-lg">
+      Back to Home
+    </button>
+  </div>
+</div>
+<script>
+  // 1. Identify Buttons
+  const confirmBtn = document.querySelector('button.bg-primaryBlue'); // Your "Confirm" button
+  const modal = document.getElementById('confirm-modal');
+  const modalHomeBtn = document.getElementById('modal-home-btn');
+  const navHomeLinks = document.querySelectorAll('a[href="index.html"]'); // Select all home links
+
+  // 2. Logic to determine the correct Home Page
+  function getCorrectHome() {
+    const userStatus = localStorage.getItem('userStatus'); // 'new' if they just signed up
+    const token = localStorage.getItem('token');
+
+    if (!token) return 'index.html'; // Public home if not logged in
+    
+    // If 'new' user status exists, take them to home-sign-up.html
+    return userStatus === 'new' ? 'home-sign-up.html' : 'home-sign-in.html';
+  }
+
+  // 3. Update all Home links on page load
+  window.addEventListener('DOMContentLoaded', () => {
+    const targetHome = getCorrectHome();
+    navHomeLinks.forEach(link => {
+      link.href = targetHome;
+    });
+  });
+
+  // 4. Handle "Confirm" click
+  if (confirmBtn) {
+    confirmBtn.addEventListener('click', () => {
+      modal.classList.remove('hidden'); // Show modal
+    });
+  }
+
+  // 5. Handle Modal "Back to Home" click
+  if (modalHomeBtn) {
+    modalHomeBtn.addEventListener('click', () => {
+      window.location.href = getCorrectHome();
+    });
+  }
+
+  // Optional: Close modal if clicking the backdrop
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.classList.add('hidden');
+  });
+</script>
+</body>
+</html>

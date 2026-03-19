@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Accessibility Profile</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primaryBlue: '#1E40AF', 
+            secondaryTeal: '#0EA5A4',
+            textPrimary: '#111827',
+            textSecondary: '#6B7280',
+            borderColor: '#E5E7EB',
+            glassTeal: '#E0F7F6',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-white text-textPrimary font-sans">
+
+  <div class="pt-6 pb-2 px-4">
+      <header class="max-w-[1200px] mx-auto bg-glassTeal rounded-full px-8 py-3 flex items-center justify-between shadow-sm">
+        
+        <div class="w-40"> 
+          <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768586288/Frame_2147227578_1_gzuwfw.png" alt="AccessTravel logo" class="w-full h-full object-contain" />
+        </div>
+
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
+          <a href="home-sign-in.html" class="text-secondaryTeal font-semibold">Home</a>
+          <a href="explore.html" class="hover:text-secondaryTeal transition">Explore</a>
+          <a href="#" class="hover:text-secondaryTeal transition">How it works</a>
+        </nav>
+
+        <div class="flex items-center gap-4">
+          <button class="w-9 h-9 flex items-center justify-center hover:opacity-80 transition">
+             <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768560713/tdesign_notification-filled_otbsqs.png" alt="Notifications" class="w-6 h-6"> 
+          </button>
+          
+          <a href="profile.html" class="w-9 h-9 flex items-center justify-center hover:opacity-80 transition rounded-full overflow-hidden border border-gray-200">
+            <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768560723/iconamoon_profile-fill_epysp4.png" alt="Profile" class="w-full h-full object-cover">
+          </a>
+        </div>
+
+      </header>
+  </div>
+
+  <main class="max-w-3xl mx-auto px-6 pt-10 pb-20">
+
+    <header class="text-center mb-10">
+      <h1 class="text-[32px] font-bold leading-tight">
+        Set Up Your Accessibility Profile
+      </h1>
+      <p class="text-[16px] text-textSecondary mt-2">
+        Tell us what you need so we can recommend the most suitable places for you.
+      </p>
+    </header>
+
+    <form id="accessibilityForm" class="space-y-6">
+
+      <section class="border border-secondaryTeal rounded-lg p-5">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768510222/Vector_iobfyp.png" alt="" class="w-6 h-6 object-contain"/>
+          <h2 class="text-[24px] font-semibold">Visual Support Needs</h2>
+        </div>
+        <div class="divide-y divide-borderColor" id="visual-group">
+          <div class="flex justify-between items-center py-3"><span>Low Vision</span><label class="relative inline-flex cursor-pointer"><input type="checkbox" name="lowVision" class="sr-only peer"><div class="w-11 h-6 bg-borderColor rounded-full peer-checked:bg-primaryBlue transition"></div><div class="absolute left-1 top-1 w-4 h-4 bg-black rounded-full peer-checked:translate-x-5 peer-checked:bg-white transition-all"></div></label></div>
+          <div class="flex justify-between items-center py-3"><span>Color Sensitivity</span><label class="relative inline-flex cursor-pointer"><input type="checkbox" name="colorSensitivity" class="sr-only peer"><div class="w-11 h-6 bg-borderColor rounded-full peer-checked:bg-primaryBlue transition"></div><div class="absolute left-1 top-1 w-4 h-4 bg-black rounded-full peer-checked:translate-x-5 peer-checked:bg-white transition-all"></div></label></div>
+          <div class="flex justify-between items-center py-3"><span>Color Blindness</span><label class="relative inline-flex cursor-pointer"><input type="checkbox" name="colorBlindness" class="sr-only peer"><div class="w-11 h-6 bg-borderColor rounded-full peer-checked:bg-primaryBlue transition"></div><div class="absolute left-1 top-1 w-4 h-4 bg-black rounded-full peer-checked:translate-x-5 peer-checked:bg-white transition-all"></div></label></div>
+          <div class="flex justify-between items-center py-3"><span>Blindness</span><label class="relative inline-flex cursor-pointer"><input type="checkbox" name="blindness" class="sr-only peer"><div class="w-11 h-6 bg-borderColor rounded-full peer-checked:bg-primaryBlue transition"></div><div class="absolute left-1 top-1 w-4 h-4 bg-black rounded-full peer-checked:translate-x-5 peer-checked:bg-white transition-all"></div></label></div>
+        </div>
+      </section>
+
+      <section class="border border-secondaryTeal rounded-lg p-5">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768510237/Vector_1_ociovp.png" alt="Mobility Heroicon" class="w-6 h-6 object-contain"/>
+          <h2 class="text-[24px] font-semibold">Mobility Aids</h2>
+        </div>
+        <div class="divide-y divide-borderColor" id="mobility-group">
+          <div class="flex justify-between items-center py-3"><span>Manual Wheelchair</span><label class="relative inline-flex cursor-pointer"><input type="checkbox" name="manualWheelchair" class="sr-only peer"><div class="w-11 h-6 bg-borderColor rounded-full peer-checked:bg-primaryBlue"></div><div class="absolute left-1 top-1 w-4 h-4 bg-black rounded-full peer-checked:translate-x-5 peer-checked:bg-white transition-all"></div></label></div>
+          <div class="flex justify-between items-center py-3"><span>Electric Wheelchair</span><label class="relative inline-flex cursor-pointer"><input type="checkbox" name="electricWheelchair" class="sr-only peer"><div class="w-11 h-6 bg-borderColor rounded-full peer-checked:bg-primaryBlue"></div><div class="absolute left-1 top-1 w-4 h-4 bg-black rounded-full peer-checked:translate-x-5 peer-checked:bg-white transition-all"></div></label></div>
+          <div class="flex justify-between items-center py-3"><span>Walker</span><label class="relative inline-flex cursor-pointer"><input type="checkbox" name="walker" class="sr-only peer"><div class="w-11 h-6 bg-borderColor rounded-full peer-checked:bg-primaryBlue"></div><div class="absolute left-1 top-1 w-4 h-4 bg-black rounded-full peer-checked:translate-x-5 peer-checked:bg-white transition-all"></div></label></div>
+        </div>
+      </section>
+
+      <section class="border border-secondaryTeal rounded-lg p-5">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768510249/Vector_3_erh4c5.png" alt="Audio Heroicon" class="w-6 h-6 object-contain"/>
+            <h2 class="text-[24px] font-semibold">Hearing Impairments</h2>
+          </div>
+          <div class="divide-y divide-borderColor" id="hearing-group">
+              <div class="flex justify-between items-center py-3"><span>Deaf</span><label class="relative inline-flex cursor-pointer"><input type="checkbox" name="deaf" class="sr-only peer"><div class="w-11 h-6 bg-borderColor rounded-full peer-checked:bg-primaryBlue"></div><div class="absolute left-1 top-1 w-4 h-4 bg-black rounded-full peer-checked:translate-x-5 peer-checked:bg-white transition-all"></div></label></div>
+              <div class="flex justify-between items-center py-3"><span>Hearing Aids</span><label class="relative inline-flex cursor-pointer"><input type="checkbox" name="hearingAids" class="sr-only peer"><div class="w-11 h-6 bg-borderColor rounded-full peer-checked:bg-primaryBlue"></div><div class="absolute left-1 top-1 w-4 h-4 bg-black rounded-full peer-checked:translate-x-5 peer-checked:bg-white transition-all"></div></label></div>
+          </div>
+      </section>
+
+      <section class="border border-secondaryTeal rounded-lg p-5">
+        <div class="flex items-center gap-3 mb-4">
+            <img src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768510262/Group_1_l8sigc.png" alt="" class="w-6 h-6 object-contain"/>
+            <h2 class="text-[24px] font-semibold">Cognitive & Learning Needs</h2>
+        </div>
+        <div class="divide-y divide-borderColor" id="cognitive-group">
+            <div class="flex justify-between items-center py-3"><span>Neurodivergent (ADHD, Autism etc.)</span><label class="relative inline-flex cursor-pointer"><input type="checkbox" name="neurodivergent" class="sr-only peer"><div class="w-11 h-6 bg-borderColor rounded-full peer-checked:bg-primaryBlue"></div><div class="absolute left-1 top-1 w-4 h-4 bg-black rounded-full peer-checked:translate-x-5 peer-checked:bg-white transition-all"></div></label></div>
+        </div>
+      </section>
+
+      <button id="saveBtn" type="submit" class="w-full bg-primaryBlue text-white py-3 rounded-md font-medium hover:opacity-90 transition">
+        Create Accessibility Profile
+      </button>
+
+    </form>
+  </main>
+
+  <div id="successModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center backdrop-blur-sm">
+    <div class="bg-white rounded-2xl p-8 max-w-sm w-full mx-4 shadow-2xl text-center transform transition-all scale-100">
+      <div class="mb-6 flex justify-center">
+        <div class="w-16 h-16 rounded-full bg-[#0EA5A4] flex items-center justify-center shadow-lg">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+      </div>
+      <h3 class="text-xl font-bold text-gray-900 mb-3">Profile Updated!</h3>
+      <p class="text-sm text-gray-500 mb-8 leading-relaxed">
+        Your accessibility preferences have been saved. We will use this to find the best places for you.
+      </p>
+      <button id="continueHomeBtn" class="w-full bg-[#1E40AF] text-white py-3 rounded-lg font-medium hover:opacity-90 transition-opacity shadow-md">
+        Continue to Home
+       </button>
+    </div>
+  </div>
+
+  <script type="module">
+    const form = document.getElementById('accessibilityForm');
+    const modal = document.getElementById('successModal');
+    const saveBtn = document.getElementById('saveBtn');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        saveBtn.innerText = "Saving...";
+
+        // 1. Collect Data from UI
+        const getItems = (id) => Array.from(document.getElementById(id).querySelectorAll('input:checked')).map(cb => cb.name);
+        
+        const profileData = {
+            visual: getItems('visual-group'),
+            mobility: getItems('mobility-group'),
+            hearing: getItems('hearing-group'),
+            cognitive: getItems('cognitive-group'),
+            timestamp: new Date().toISOString()
+        };
+
+        // 2. Save to Local Storage (Bypasses Backend)
+        localStorage.setItem('userAccessibilityProfile', JSON.stringify(profileData));
+        console.log("✅ Profile saved locally:", profileData);
+
+        // 3. Show Success
+        setTimeout(() => {
+            modal.classList.remove('hidden');
+            saveBtn.innerText = "Create Accessibility Profile";
+        }, 500);
+    });
+
+    document.getElementById('continueHomeBtn').addEventListener('click', () => {
+        window.location.href = "explore.html"; 
+    });
+</script>
+</body>
+</html>

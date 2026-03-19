@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us</title>
+
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="font-inter bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+
+  <!-- ABOUT US SECTION -->
+  <section class="py-20 px-6">
+    <div class="max-w-5xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-md p-10">
+
+      <!-- PAGE TITLE -->
+      <h1 class="text-center font-semibold mb-10 text-[32px]">
+        About Us
+      </h1>
+
+      <!-- CONTENT GRID -->
+      <div class="grid grid-cols-2 gap-10 items-center">
+
+        <!-- IMAGE BLOCK -->
+        <div class="w-full h-[280px] overflow-hidden rounded-lg">
+          <img
+            src="https://res.cloudinary.com/djyajhlmr/image/upload/v1768071831/28443354c63936065ddc56d114bb05daf79dae6e_foggla.jpg"
+            alt="Accessible travel experience"
+            class="w-full h-full object-cover"
+          />
+        </div>
+
+        <!-- TEXT CONTENT -->
+        <div>
+          <h2 class="font-semibold mb-4 text-[24px]">
+            AccessTravel
+          </h2>
+
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+            AccessTravel is an accessibility-focused travel platform that helps
+            people with disabilities find and plan trips based on their specific
+            accessibility needs. We believe reliable and accessible information
+            leads to more confident and inclusive travel experiences.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

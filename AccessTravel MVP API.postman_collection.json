@@ -1,0 +1,1516 @@
+{
+	"info": {
+		"_postman_id": "0c6c38a2-b856-4d72-9047-58d19a257621",
+		"name": "AccessTravel MVP API",
+		"description": "Postman collection for AccessTravel backend MVP (Auth, Profiles, Places, Reviews, Trips, Admin)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45129757",
+		"_collection_link": "https://mercy-5874738.postman.co/workspace/MERCY's-Workspace~4b6b9452-ab11-4609-8786-6dbc8da1d6bc/collection/45129757-0c6c38a2-b856-4d72-9047-58d19a257621?action=share&source=collection_link&creator=45129757"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"Password123!\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"Password123!\"\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 20 Jan 2026 10:37:23 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "327"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "9c0defa8ade74dca-FRA"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"198-21rPF+CcvRKAogBvLZ+Hv48wkqk\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "c631f53e-3ebd-4777"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Registration successful. Check your email or check your spam folder for OTP.\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NmY1YWUyNzE5NjNlMDNhNDUwODFjNiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2ODkwNTQ0MywiZXhwIjoxNzY5NTEwMjQzfQ.OkXwqe-6ozH3pDhVN7WRXSc1AyA6B9XUi-ZytaekOYM\",\n    \"user\": {\n        \"id\": \"696f5ae271963e03a45081c6\",\n        \"name\": \"John Doe\",\n        \"email\": \"john@example.com\",\n        \"role\": \"admin\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"john@example.com\",\n  \"password\": \"Password123!\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"john@example.com\",\n  \"password\": \"Password123!\"\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 20 Jan 2026 10:38:10 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "300"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "9c0df0cd7ead4dca-FRA"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"173-FXR3AqqGtcNQKHnmm8xI4oFquH4\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "c82590f2-fa69-4336"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Login successful\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NmY1YWUyNzE5NjNlMDNhNDUwODFjNiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2ODkwNTQ5MCwiZXhwIjoxNzY5NTEwMjkwfQ.5jbfLo2BQv5H9d3jZB0ZjbBXJh-vntIst5hPKs_PpDY\",\n    \"user\": {\n        \"id\": \"696f5ae271963e03a45081c6\",\n        \"name\": \"John Doe\",\n        \"email\": \"john@example.com\",\n        \"role\": \"admin\",\n        \"isEmailVerified\": true\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Me",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/auth/me",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Me",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/auth/me",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 20 Jan 2026 10:41:53 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "192"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "9c0df6421be93aa2-FRA"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"124-7Hc2Nv+/udNN+WQN3D+bYalO+9c\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "bbe91a4b-3df6-4385"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"user\": {\n        \"_id\": \"696f5ae271963e03a45081c6\",\n        \"name\": \"John Doe\",\n        \"email\": \"john@example.com\",\n        \"role\": \"admin\",\n        \"isEmailVerified\": true,\n        \"emailOTP\": \"307986\",\n        \"emailOTPExpires\": \"2026-01-20T10:47:22.846Z\",\n        \"createdAt\": \"2026-01-20T10:37:22.853Z\",\n        \"updatedAt\": \"2026-01-20T10:37:22.853Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Accessibility Profile",
+			"item": [
+				{
+					"name": "Create Profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"mobility\": { \"wheelchair\": true, \"rollInShower\": true },\n  \"visual\": { \"screenReader\": true },\n  \"hearing\": { \"captions\": true },\n  \"cognitive\": { \"simpleLanguage\": true },\n  \"serviceAnimal\": true,\n  \"sensoryNeeds\": { \"lowNoise\": true }\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/profile/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profile",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Profile",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"mobility\": { \"wheelchair\": true, \"rollInShower\": true },\n  \"visual\": { \"screenReader\": true },\n  \"hearing\": { \"captions\": true },\n  \"cognitive\": { \"simpleLanguage\": true },\n  \"serviceAnimal\": true,\n  \"sensoryNeeds\": { \"lowNoise\": true }\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/profile/create",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"profile",
+										"create"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 20 Jan 2026 10:42:12 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "261"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "9c0df6bc3ce43aa2-FRA"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"1c2-bZ6v67rxFDxlyiaDz+M/NGXf0Wg\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "d1b3c759-a595-4c55"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"user\": \"696f5ae271963e03a45081c6\",\n        \"mobility\": {\n            \"wheelchair\": true,\n            \"rollInShower\": true,\n            \"stepFreeAccess\": false\n        },\n        \"visual\": {\n            \"braille\": false,\n            \"audioGuides\": false\n        },\n        \"hearing\": {\n            \"captions\": true,\n            \"signLanguage\": false\n        },\n        \"cognitive\": {\n            \"easyNavigation\": false,\n            \"lowSensory\": false\n        },\n        \"sensory\": {\n            \"lowNoise\": false,\n            \"lowLight\": false\n        },\n        \"_id\": \"696f5c0471963e03a45081cc\",\n        \"createdAt\": \"2026-01-20T10:42:12.765Z\",\n        \"updatedAt\": \"2026-01-20T10:42:12.765Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"mobility\": { \"wheelchair\": false }\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/profile/update",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profile",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Profile",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"mobility\": { \"wheelchair\": false }\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/profile/update",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"profile",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 20 Jan 2026 10:42:26 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "282"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "9c0df71148083aa2-FRA"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"1e6-x0lf+ca12BgEk+R2cvzSOrcO2zY\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "e7ab3d3c-abd3-4adc"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"mobility\": {\n            \"rollInShower\": false,\n            \"stepFreeAccess\": false,\n            \"wheelchair\": false\n        },\n        \"visual\": {\n            \"braille\": false,\n            \"audioGuides\": false\n        },\n        \"hearing\": {\n            \"captions\": true,\n            \"signLanguage\": false\n        },\n        \"cognitive\": {\n            \"easyNavigation\": false,\n            \"lowSensory\": false\n        },\n        \"serviceAnimal\": {\n            \"allowed\": false\n        },\n        \"sensory\": {\n            \"lowNoise\": false,\n            \"lowLight\": false\n        },\n        \"_id\": \"696f5c0471963e03a45081cc\",\n        \"user\": \"696f5ae271963e03a45081c6\",\n        \"createdAt\": \"2026-01-20T10:42:12.765Z\",\n        \"updatedAt\": \"2026-01-20T10:42:26.315Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/profile/get",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profile",
+								"get"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Profile",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/profile/get",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"profile",
+										"get"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 20 Jan 2026 10:42:39 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "317"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "9c0df76068cc3aa2-FRA"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"21b-o6RelK5+nqqChIn/0IrSXuge9lA\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "f02e08b7-6740-4d98"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"mobility\": {\n            \"rollInShower\": false,\n            \"stepFreeAccess\": false,\n            \"wheelchair\": false\n        },\n        \"visual\": {\n            \"braille\": false,\n            \"audioGuides\": false\n        },\n        \"hearing\": {\n            \"captions\": true,\n            \"signLanguage\": false\n        },\n        \"cognitive\": {\n            \"easyNavigation\": false,\n            \"lowSensory\": false\n        },\n        \"serviceAnimal\": {\n            \"allowed\": false\n        },\n        \"sensory\": {\n            \"lowNoise\": false,\n            \"lowLight\": false\n        },\n        \"_id\": \"696f5c0471963e03a45081cc\",\n        \"user\": {\n            \"_id\": \"696f5ae271963e03a45081c6\",\n            \"name\": \"John Doe\",\n            \"email\": \"john@example.com\"\n        },\n        \"createdAt\": \"2026-01-20T10:42:12.765Z\",\n        \"updatedAt\": \"2026-01-20T10:42:26.315Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Places",
+			"item": [
+				{
+					"name": "Create Place",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Accessible Grand Hotel\",\n  \"category\": \"hotel\",\n  \"location\": { \"city\": \"Lagos\", \"country\": \"Nigeria\" },\n  \"accessibilityFeatures\": [\"wheelchair_access\", \"roll_in_shower\"],\n  \"photos\": [],\n  \"verificationStatus\": \"pending\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/places/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"places",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Place",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Accessible Grand Hotel\",\n  \"category\": \"hotel\",\n  \"location\": { \"city\": \"Lagos\", \"country\": \"Nigeria\" },\n  \"accessibilityFeatures\": [\"wheelchair_access\", \"roll_in_shower\"],\n  \"photos\": [],\n  \"verificationStatus\": \"pending\"\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/places/create",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"places",
+										"create"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 20 Jan 2026 10:43:00 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "286"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "9c0df7e5085a3aa2-FRA"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"1dd-DIGN0z8rzzf1mBAzexZNMTwUUJI\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "2b90cb93-706c-42bc"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"name\": \"Accessible Grand Hotel\",\n        \"category\": \"hotel\",\n        \"location\": {\n            \"city\": \"Lagos\",\n            \"country\": \"Nigeria\"\n        },\n        \"accessibility\": {\n            \"wheelchairAccessible\": false,\n            \"brailleSignage\": false,\n            \"hearingAssistance\": false,\n            \"serviceAnimalAllowed\": false,\n            \"accessibleRestroom\": false\n        },\n        \"photos\": [],\n        \"verificationStatus\": \"pending\",\n        \"createdBy\": \"696f5ae271963e03a45081c6\",\n        \"_id\": \"696f5c3471963e03a45081d4\",\n        \"createdAt\": \"2026-01-20T10:43:00.182Z\",\n        \"updatedAt\": \"2026-01-20T10:43:00.182Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Place By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/places/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"places",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Place By ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/places/696f5c3471963e03a45081d4",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"places",
+										"696f5c3471963e03a45081d4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 20 Jan 2026 10:43:42 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "313"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "9c0df8ea5c3b3aa2-FRA"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"212-tkw56M60I7flHdFhvKWpwQiN9Bk\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "e07c46a8-f688-40ee"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"location\": {\n            \"city\": \"Lagos\",\n            \"country\": \"Nigeria\"\n        },\n        \"accessibility\": {\n            \"wheelchairAccessible\": false,\n            \"brailleSignage\": false,\n            \"hearingAssistance\": false,\n            \"serviceAnimalAllowed\": false,\n            \"accessibleRestroom\": false\n        },\n        \"_id\": \"696f5c3471963e03a45081d4\",\n        \"name\": \"Accessible Grand Hotel\",\n        \"category\": \"hotel\",\n        \"photos\": [],\n        \"verificationStatus\": \"pending\",\n        \"createdBy\": {\n            \"_id\": \"696f5ae271963e03a45081c6\",\n            \"name\": \"John Doe\",\n            \"email\": \"john@example.com\"\n        },\n        \"createdAt\": \"2026-01-20T10:43:00.182Z\",\n        \"updatedAt\": \"2026-01-20T10:43:00.182Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Search Places",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/places/search?wheelchair=true&serviceAnimal=true",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"places",
+								"search"
+							],
+							"query": [
+								{
+									"key": "wheelchair",
+									"value": "true"
+								},
+								{
+									"key": "serviceAnimal",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Search Places",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/places/search?wheelchair=false&serviceAnimal=false",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"places",
+										"search"
+									],
+									"query": [
+										{
+											"key": "wheelchair",
+											"value": "false"
+										},
+										{
+											"key": "serviceAnimal",
+											"value": "false"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 20 Jan 2026 10:44:47 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "974"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "9c0dfa80bd903aa2-FRA"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"1398-IzXR1XwYI9qSxskoTIk1KbEAut8\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "50ff9e6d-bc39-404a"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"count\": 8,\n    \"data\": [\n        {\n            \"_id\": \"696ec220a3513f1b4fb9d620\",\n            \"name\": \"Accessible Hotel Lagos\",\n            \"category\": \"hotel\",\n            \"location\": {\n                \"city\": \"Lagos\",\n                \"country\": \"Nigeria\"\n            },\n            \"accessibility\": {\n                \"wheelchairAccessible\": false,\n                \"brailleSignage\": false,\n                \"hearingAssistance\": false,\n                \"serviceAnimalAllowed\": false,\n                \"accessibleRestroom\": false\n            },\n            \"verificationStatus\": \"pending\",\n            \"createdBy\": \"696eb947112d1ebf04cb0e49\",\n            \"photos\": [],\n            \"createdAt\": \"2026-01-19T23:45:36.161Z\",\n            \"updatedAt\": \"2026-01-19T23:45:36.161Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"696ecbf11bbf35026e9dc9ab\",\n            \"name\": \"Example Place\",\n            \"category\": \"attraction\",\n            \"description\": \"Nice place\",\n            \"location\": {\n                \"address\": \"123 Street\",\n                \"city\": \"Lagos\",\n                \"state\": \"Lagos\",\n                \"country\": \"Nigeria\",\n                \"coordinates\": {\n                    \"lat\": 6.5244,\n                    \"lng\": 3.3792\n                }\n            },\n            \"accessibility\": {\n                \"wheelchairAccessible\": true,\n                \"brailleSignage\": false,\n                \"hearingAssistance\": false,\n                \"serviceAnimalAllowed\": true,\n                \"accessibleRestroom\": true\n            },\n            \"photos\": [\n                {\n                    \"url\": \"https://postimg.cc/dk9LRXSJ\",\n                    \"_id\": \"696ecbf11bbf35026e9dc9ac\",\n                    \"uploadedAt\": \"2026-01-20T00:27:29.960Z\"\n                }\n            ],\n            \"verificationStatus\": \"pending\",\n            \"createdBy\": \"696eb947112d1ebf04cb0e49\",\n            \"createdAt\": \"2026-01-20T00:27:29.991Z\",\n            \"updatedAt\": \"2026-01-20T00:27:29.991Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"696ecdc153998a1f631f5d87\",\n            \"name\": \"Access travel\",\n            \"category\": \"attraction\",\n            \"description\": \"comdusive\",\n            \"location\": {\n                \"address\": \"123 orlando Street\",\n                \"city\": \"ikeja\",\n                \"state\": \"Lagos\",\n                \"country\": \"Nigeria\",\n                \"coordinates\": {\n                    \"lat\": 6.5244,\n                    \"lng\": 3.3792\n                }\n            },\n            \"accessibility\": {\n                \"wheelchairAccessible\": false,\n                \"brailleSignage\": true,\n                \"hearingAssistance\": false,\n                \"serviceAnimalAllowed\": true,\n                \"accessibleRestroom\": true\n            },\n            \"photos\": [\n                {\n                    \"url\": \"https://postimg.cc/pmnrcy69\",\n                    \"_id\": \"696ecdc153998a1f631f5d88\",\n                    \"uploadedAt\": \"2026-01-20T00:35:13.747Z\"\n                }\n            ],\n            \"verificationStatus\": \"pending\",\n            \"createdBy\": \"696eb947112d1ebf04cb0e49\",\n            \"createdAt\": \"2026-01-20T00:35:13.769Z\",\n            \"updatedAt\": \"2026-01-20T00:35:13.769Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"696ece4653998a1f631f5d8b\",\n            \"name\": \"Hope travel\",\n            \"category\": \"attraction\",\n            \"description\": \"comdusive\",\n            \"location\": {\n                \"address\": \"123 orlando Street\",\n                \"city\": \"Akure\",\n                \"state\": \"Ondo\",\n                \"country\": \"Nigeria\",\n                \"coordinates\": {\n                    \"lat\": 6.5244,\n                    \"lng\": 3.3792\n                }\n            },\n            \"accessibility\": {\n                \"wheelchairAccessible\": false,\n                \"brailleSignage\": true,\n                \"hearingAssistance\": false,\n                \"serviceAnimalAllowed\": true,\n                \"accessibleRestroom\": true\n            },\n            \"photos\": [\n                {\n                    \"url\": \"https://postimg.cc/xXb8pq42\",\n                    \"_id\": \"696ece4653998a1f631f5d8c\",\n                    \"uploadedAt\": \"2026-01-20T00:37:26.451Z\"\n                }\n            ],\n            \"verificationStatus\": \"pending\",\n            \"createdBy\": \"696eb947112d1ebf04cb0e49\",\n            \"createdAt\": \"2026-01-20T00:37:26.457Z\",\n            \"updatedAt\": \"2026-01-20T00:37:26.457Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"696ecf2c53998a1f631f5d92\",\n            \"name\": \"Hope life\",\n            \"category\": \"hotel\",\n            \"description\": \"comdusive\",\n            \"location\": {\n                \"address\": \"123 iru Street\",\n                \"city\": \"Akure\",\n                \"state\": \"Ondo\",\n                \"country\": \"Nigeria\",\n                \"coordinates\": {\n                    \"lat\": 6.5244,\n                    \"lng\": 3.3792\n                }\n            },\n            \"accessibility\": {\n                \"wheelchairAccessible\": true,\n                \"brailleSignage\": true,\n                \"hearingAssistance\": false,\n                \"serviceAnimalAllowed\": false,\n                \"accessibleRestroom\": true\n            },\n            \"photos\": [\n                {\n                    \"url\": \"https://i.postimg.cc/qRyg8hKW/dylan_calluy_tea_Mc_ALMtto_unsplash.jpg\",\n                    \"_id\": \"696ecf2c53998a1f631f5d93\",\n                    \"uploadedAt\": \"2026-01-20T00:41:16.230Z\"\n                }\n            ],\n            \"verificationStatus\": \"pending\",\n            \"createdBy\": \"696eb947112d1ebf04cb0e49\",\n            \"createdAt\": \"2026-01-20T00:41:16.238Z\",\n            \"updatedAt\": \"2026-01-20T00:41:16.238Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"696ecfa553998a1f631f5d96\",\n            \"name\": \"Hope sole\",\n            \"category\": \"hotel\",\n            \"description\": \"comdusive\",\n            \"location\": {\n                \"address\": \"123 iru Street\",\n                \"city\": \"tokyo\",\n                \"state\": \"tokyo\",\n                \"country\": \"Japan\",\n                \"coordinates\": {\n                    \"lat\": 6.5644,\n                    \"lng\": 3.0792\n                }\n            },\n            \"accessibility\": {\n                \"wheelchairAccessible\": true,\n                \"brailleSignage\": false,\n                \"hearingAssistance\": false,\n                \"serviceAnimalAllowed\": false,\n                \"accessibleRestroom\": true\n            },\n            \"photos\": [\n                {\n                    \"url\": \"https://i.postimg.cc/xCwMQVvN/IMG_20260119_010340.jpg\",\n                    \"_id\": \"696ecfa553998a1f631f5d97\",\n                    \"uploadedAt\": \"2026-01-20T00:43:17.751Z\"\n                }\n            ],\n            \"verificationStatus\": \"pending\",\n            \"createdBy\": \"696eb947112d1ebf04cb0e49\",\n            \"createdAt\": \"2026-01-20T00:43:17.757Z\",\n            \"updatedAt\": \"2026-01-20T00:43:17.757Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"696ed05853998a1f631f5d9a\",\n            \"name\": \"Hope sole\",\n            \"category\": \"hotel\",\n            \"description\": \"safe\",\n            \"location\": {\n                \"address\": \"policeStreet\",\n                \"city\": \"iyana paja\",\n                \"state\": \"lagos\",\n                \"country\": \"Nigeria\",\n                \"coordinates\": {\n                    \"lat\": 6.5944,\n                    \"lng\": 3.5382\n                }\n            },\n            \"accessibility\": {\n                \"wheelchairAccessible\": true,\n                \"brailleSignage\": true,\n                \"hearingAssistance\": true,\n                \"serviceAnimalAllowed\": false,\n                \"accessibleRestroom\": false\n            },\n            \"photos\": [\n                {\n                    \"url\": \"https://i.postimg.cc/qRPyrHs8/IMG_20260119_010230.jpg\",\n                    \"_id\": \"696ed05853998a1f631f5d9b\",\n                    \"uploadedAt\": \"2026-01-20T00:46:16.496Z\"\n                }\n            ],\n            \"verificationStatus\": \"pending\",\n            \"createdBy\": \"696eb947112d1ebf04cb0e49\",\n            \"createdAt\": \"2026-01-20T00:46:16.510Z\",\n            \"updatedAt\": \"2026-01-20T00:46:16.510Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"696f5c3471963e03a45081d4\",\n            \"name\": \"Accessible Grand Hotel\",\n            \"category\": \"hotel\",\n            \"location\": {\n                \"city\": \"Lagos\",\n                \"country\": \"Nigeria\"\n            },\n            \"accessibility\": {\n                \"wheelchairAccessible\": false,\n                \"brailleSignage\": false,\n                \"hearingAssistance\": false,\n                \"serviceAnimalAllowed\": false,\n                \"accessibleRestroom\": false\n            },\n            \"photos\": [],\n            \"verificationStatus\": \"pending\",\n            \"createdBy\": \"696f5ae271963e03a45081c6\",\n            \"createdAt\": \"2026-01-20T10:43:00.182Z\",\n            \"updatedAt\": \"2026-01-20T10:43:00.182Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "Add Review",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"placeId\": \"PLACE_ID_HERE\",\n  \"ratings\": { \"mobility\": 5, \"visual\": 4 },\n  \"comments\": \"Wheelchair access was excellent\",\n  \"visitDate\": \"2025-12-20\",\n  \"photos\": []\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/reviews/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"reviews",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Reviews By Place",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/reviews/place/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"reviews",
+								"place",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Reviews By Place",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/reviews/place/696f5c3471963e03a45081d4",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"reviews",
+										"place",
+										"696f5c3471963e03a45081d4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 20 Jan 2026 10:46:34 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "9c0dfd1f4e183aa2-FRA"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"24-YA2qaqoHN76SgtFfK4UBGqyVP1w\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "32870a83-814b-4c48"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"count\": 0,\n    \"data\": []\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Trips",
+			"item": [
+				{
+					"name": "Create Trip",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"destination\": \"Lagos\",\n  \"startDate\": \"2026-02-01\",\n  \"endDate\": \"2026-02-07\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/trips/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trips",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Trip",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"destination\": \"Lagos\",\n  \"startDate\": \"2026-02-01\",\n  \"endDate\": \"2026-02-07\"\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/trips/create",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"trips",
+										"create"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 20 Jan 2026 10:47:05 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "168"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "9c0dfde0feb83aa2-FRA"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"127-fpABjPaUOw7GndEpby9/aNIwu1k\""
+								},
+								{
+									"key": "rndr-id",
+									"value": "da510031-12fb-4008"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"user\": \"696f5ae271963e03a45081c6\",\n        \"destination\": \"Lagos\",\n        \"startDate\": \"2026-02-01T00:00:00.000Z\",\n        \"endDate\": \"2026-02-07T00:00:00.000Z\",\n        \"status\": \"planned\",\n        \"_id\": \"696f5d2971963e03a45081e8\",\n        \"createdAt\": \"2026-01-20T10:47:05.354Z\",\n        \"updatedAt\": \"2026-01-20T10:47:05.354Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Trip",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/trips/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trips",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Get Flagged Reviews",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/admin/reviews",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Places For Moderation",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/admin/places",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"places"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:5000/api"
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
